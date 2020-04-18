@@ -1,0 +1,21 @@
+## Wifi
+
+sudo modprobe -rv rtl8723be
+sudo modprobe -v rtl8723be ant_sel=2
+iwconfig wlo1 | grep -i --color quality
+nmcli
+sudo lshw -C network
+lspci
+nmcli dev wifi
+nmcli connection show "PANDEY JI NAMASKAR"
+
+
+
+##router password
+
+192.168.88.1
+
+username: admin
+password: dep121
+
+

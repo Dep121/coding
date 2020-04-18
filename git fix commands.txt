@@ -1,0 +1,63 @@
+
+
+
+---------	https://www.youtube.com/watch?v=FdZecVxzJbk	-----------
+
+#######	CONCEPTS #######
+we classify state of files in three categories.
+1. Working state: files are changed and saved.
+2. Staging state: files are added to staging area and ready to commit.
+3. Commited state: files are commited.
+
+---	A git commit hash is a cryptographic checksum that is calculated from the state of your 	repository, including the hash of all the files in the repository, the hash of the 		previous commit, the current date and time, etc.
+
+---	every commit has record in the git history.
+
+---	Don't change the git history that is already pushed to your remote branch it will 		create problem to the other contributer user.
+
+---	you can change your git history which haven't pushed yet i.e. it is present only locally.
+
+
+---	CHERYPICK
+	it does not delete the commit from where you are picking from.
+
+---	three types of reset to remove the commits.
+
+
+# Git Fixing common mistakes and undoing bad commits
+
+PROBLEM:::  you have some changes in working state and want to undo all the changes.
+# to revert the working state files back to fresh condition.
+# you can see the changes in <git diff> and <git status> command.
+> git checkout <any_branch_name>
+> git diff	#results empty
+> git status	#nothing to commit
+
+PROBLEM:::  you have commited wrong message
+# rewrite the last commit message
+> git commit --amend -m "<your message>"
+
+# to check the commit history
+> git log
+
+# to check the commit history with files commited
+> git log --stat
+
+PROBLEM:::  include a new change in a last commit without creating a new commit.
+
+> git add <change>	# add the new change to staging area.
+> git commit --amend	# it will open a vim like editor for last commit and you can see your 				# staged files here.
+			# Here you can change the commit message also.
+> git log		# you will same number of commits but hash is again changed.
+> git log --stat	# now your <change> is part of the last commit.
+
+PROBLEM:::  commited on a wrong branch
+# commit on a master branch instead of feature branch
+> git branch	# you are on master
+> git log	# grab the <commit hash initials> (6-7 chars) which you wrongly commited.
+> git checkout <feature branch>
+> git log	# check the commits of <feature branch>
+> git chery-pick <commit hash initials>
+> git log	# one extra commit of master branch is there.
+		# but master branch commit is not removed.
+

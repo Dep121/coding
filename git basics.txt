@@ -1,0 +1,113 @@
+
+
+
+-------		https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g	-----------
+
+
+
+
+# check the version
+> git --version
+
+# set up global configuration variables
+# helps in identifying the coder.
+> git config --global user.name "Deepak Kumar Pandey"
+> git config --global user.email "deepakkumarpandey121@gmail.com"
+
+# list out all the configs of your git
+> git config --list
+
+# for help on any git command
+> git help <command name>
+	OR
+> git <command name> --help
+
+# Two scenarios
+# First scenario
+	#1. having existing code without git then this command create ".git" file in current folder
+		and start the tracking of your changes.
+	> git init
+
+	# want to remove then just remove ".git" file
+	> rm -rf .git
+
+	# checking the status of tracked files whether they are staged(Green) or unstaged(Red).
+	> git status
+
+	# Make ".gitignore" file add the path relative to current folder to untrack the files you want.
+	> touch .gitignore
+	# to edit file
+	> gedit .gitignore
+
+	# To make all the tracked files staged
+	> git add -A
+	> git status
+
+	# To add specific files to the staging area
+	> git add <file-name> [<file-name>]
+	> git status
+
+	# To remove the file from staging area
+	> git reset <file-name>
+
+	# After adding the files to staging area then commit the files
+	# Only staged files will be commited.
+	> git commit -m "my first commit"
+	> git status
+	> git log
+
+# Second scenario
+	#2.having cloned repo
+	# it will make a clone of the repo.
+	> git clone <repo-path>
+	
+	# viewing the information about the remote repository
+	> git remote -v
+
+	# list out all the branches remotely and locally
+	> git branch -a
+
+	# list out local branches
+	> git branch
+
+	# and rest part is same for adding and commiting the changes
+
+#pushing the changes to remote origin that we have set earlier
+# before pushing just make sure your branch is uptodate.
+> git pull origin <branch_name>
+> git push origin <branch_name>
+
+# create a branch
+> git branch <branch_name>
+
+# switch to other branch
+> git checkout <other_branch_name>
+
+# create and switch to the new branch
+> git checkout -b <new_branch_name>
+
+# merge a feature branch to master
+> git commit -m "feature branch commit"
+> git checkout master
+> git pull origin master	#always update the branch in which you are merging
+> git branch --merged		#tells us about the branches which we have merged into master
+> git merge <feature_branch>
+> git push origin master
+> git branch --merged 		#check and see the name of feature branch will be here
+
+# delete branch
+> git branch -a				#you will find the feature branch locally and remotely
+> git branch -d <feature_branch>	#deletes the branch locally
+> git branch -a				#you will find the feature branch remotely
+> git push origin --delete <feature_branch> #to delete the branch remotely
+> git branch -a
+
+# Find all the differences in files that you have staged
+> git diff
+
+# associate the push and pull to a specific branch
+> git push -u origin <branch_name>
+
+# now after associating you can push to the same branch by using following command
+> git push
+> git pull
