@@ -5,7 +5,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//  Time complexity O(root(n))
+//  Time complexity O(root(n)loglogn)
 //  check prime numbers upto n
 bool primeSeive(int* p, int n){
     p[0] = p[1] = 0;   //  0, 1 is not prime
@@ -19,11 +19,11 @@ bool primeSeive(int* p, int n){
 
     //  mark the numbers who are not prime
     for (int i = 2; i * i <= n; ++i)
-    //  before root(n), all the numbers can mark "the numbers upto n" who are not prime.
+    //  before root(n), all the numbers can mark "the numbers upto n" who are not prime. root(n) times;
     {
         if(!p[i]) continue;
         for (int j = i * i; j < n; j+=i)
-    //  we can start with i*i because all the numbers before i*i are already marked by numbers less than i.
+    //  we can start with i*i because all the numbers before i*i are already marked by numbers less than i. n/2 + n/3 + n/4, ... = loglogn
         {
             p[j] = 0;
         }
