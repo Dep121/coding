@@ -1,0 +1,82 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        // {
+        //     "label": "Run cpp",
+        //     "type": "shell",
+        //     "command": "",
+        //     "args": [
+        //         ".\\${fileDirname}\\${fileBasenameNoExtension}.exe"
+        //     ],
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": true,
+        //     },
+        //     "problemMatcher": [
+        //         "$gcc"
+        //     ],
+        //     "dependsOn":["g++.exe build and run active file"]
+        // },
+        // {
+        //     "type": "shell",
+        //     "label": "g++.exe build and run active file",
+        //     "command": "C:\\TDM-GCC-64\\bin\\g++.exe",
+        //     "args": [
+        //         "${file}",
+        //         "-o",
+        //         "${fileDirname}\\${fileBasenameNoExtension}.exe",
+        //     ],
+        //     "options": {
+        //         "cwd": "C:\\TDM-GCC-64\\bin"
+        //     },
+        //     "problemMatcher": [
+        //         "$gcc"
+        //     ],
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": true
+        //     }
+        // },
+        {
+            "label": "build cpp",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-std=c++14",
+                "-o",
+                "${fileBasenameNoExtension}",
+                "${file}"
+            ],
+            "group": "build",
+            "options": {
+                "cwd": "${fileDirname}"
+            }
+        },
+        {
+            "label": "build and run cpp",
+            "type": "shell",
+            //"command": "./${fileBasenameNoExtension} < input.txt > output.txt",
+            "command": "Start-Process",
+            "args":[
+                ".\\${fileBasenameNoExtension}",
+                "-RedirectStandardInput",
+                ".\\input.txt",
+                "-RedirectStandardOutput",
+                ".\\output.txt",
+                "-NoNewWindow",
+                "-Wait"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "dependsOn": "build cpp",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

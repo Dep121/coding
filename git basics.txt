@@ -111,3 +111,14 @@
 # now after associating you can push to the same branch by using following command
 > git push
 > git pull
+
+# Revert modified files using the following command
+> git checkout -f
+
+# Remove untracked files (dry run)
+> git clean -nfd					# it will list all the files and directories
+									which are to be removed and are present in
+									current directory and nested directories.
+
+# Remove untracked files
+> git clean -fd
