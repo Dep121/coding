@@ -112,10 +112,14 @@
 > git push
 > git pull
 
-# Revert modified files using the following command
+# Revert
+	1. modified files
+	2. staged modified files
+	3. staged untracked files
+	using the following command
 > git checkout -f
 
-# Remove untracked files (dry run)
+# Remove untracked files (dry run) but not staged untracked files
 > git clean -nfd					# it will list all the files and directories
 									which are to be removed and are present in
 									current directory and nested directories.
