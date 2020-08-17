@@ -12,3 +12,10 @@ function foo() {
 /*
 8
 */
+
+console.log(foo());
+function foo() {
+    var bar = 3;
+    return bar;
+    var bar = 8;
+}
