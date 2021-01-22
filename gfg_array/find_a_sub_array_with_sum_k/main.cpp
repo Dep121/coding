@@ -5,9 +5,13 @@ int find_a_sub_array_with_given_sum(vector<int> v, int size, int k){
     int si = 0;
     int ei = 0;
     int sum = 0;
+
+    //big O(n+n) = O(n)
     for(int i=0; i<size; ++i){
+        // O(n)
         sum += v[i];
         while(sum > k && si <= i){
+            // O(n)
             sum -= v[si];
             si++;
             if(sum == k){
