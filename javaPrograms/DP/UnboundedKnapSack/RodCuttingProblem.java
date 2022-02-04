@@ -5,6 +5,21 @@ class RodCuttingProblem {
 
     static int table[][] = new int[20][20];
 
+    static int rec(int[] rodLen, int[] price, int rodSize, int rodLengths) {
+        if(rodLengths == 0) {
+            return 0;
+        }
+
+        if(rodLen[rodLengths-1] <= rodSize) {
+            return Math.max(
+                price[rodLengths-1] + rec(rodLen, price, rodSize - rodLen[rodLengths - 1], rodLengths),
+                rec(rodLen, price, rodSize, rodLengths-1)
+            );
+        } else {
+            return rec(rodLen, price, rodSize, rodLengths-1);
+        }
+    }
+
     static int maximumPrice(int rodLen[], int price[], int rodSize) {
         int numlengths = rodLen.length;
         // initialize the table
@@ -41,5 +56,6 @@ class RodCuttingProblem {
         // cut the rod in given sizes mentioned in length array such that price of the rod can be maximize.
 
         System.out.println(maximumPrice(rodLen, price, rodSize));
+        System.out.println(rec(rodLen, price, rodSize, rodLen.length));
     }
 }

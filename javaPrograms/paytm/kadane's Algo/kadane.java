@@ -6,6 +6,8 @@ import java.io.*;
 
 class kadane {
     public static void main (String[] args) {
+
+        // Largest sum contiguous sub array
         //code
         Scanner s = new Scanner(System.in);
         
@@ -20,7 +22,7 @@ class kadane {
             
             int currMax = arr[0];
             int maxSoFar = arr[0];
-            for(int i=1, p=0; i<size; ++i) {
+            for(int i=1; i<size; ++i) {
                 
                 currMax = Math.max(arr[i], currMax + arr[i]);
                 maxSoFar = Math.max(maxSoFar, currMax);

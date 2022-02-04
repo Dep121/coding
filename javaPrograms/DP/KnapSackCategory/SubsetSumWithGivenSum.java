@@ -32,7 +32,7 @@ class SubsetSumWithGivenSum {
             return table[size][partialSum];
         }
 
-        if(table[size][partialSum] != ) {
+        if(table[size][partialSum] != -1) {
             return table[size][partialSum];
         }
 

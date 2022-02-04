@@ -1,12 +1,24 @@
-function parent() {
+function parent1() {
+    return hoisted();
+    
     var hoisted = "I'm a variable";
     function hoisted() {
         return "I'm a function";
     }
-    return hoisted();
+    
 }
 
-console.log(parent());
+function parent2() {
+
+    var hoisted = "I'm a variable";
+    function hoisted() {
+        return "I'm a function";
+    }
+    return hoisted;
+}
+
+console.log(parent1());
+console.log(parent2());
 
 /*
 /home/dep/projects/competitive-coding/JS_Trick_Questions/q9.js:6

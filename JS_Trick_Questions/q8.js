@@ -1,4 +1,4 @@
-alert(foo());
+console.log(foo());
 
 function foo() {
     var bar = function() {

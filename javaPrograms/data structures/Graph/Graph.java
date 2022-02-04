@@ -2,14 +2,14 @@ import java.util.*;
 
 class Graph {
     private int v;  // number of vertices
-    private LinkedList<Integer> adj[];  // adjacency list
+    private LinkedList<LinkedList> adj[];  // adjacency list
 
     Graph(int v) {
         this.v = v;
         this.adj = new LinkedList[v];
 
         for (int i=0; i<v; ++i) {
-            this.adj[i] = new LinkedList<Integer>();
+            this.adj[i] = new LinkedList();
         }
     }
 
