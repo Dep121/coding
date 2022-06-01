@@ -1,5 +1,3 @@
 */*/main
 */*/main.exe
-javaPrograms/*.class
-javaPrograms/*/*/*.class
-javaPrograms/*/*.class
+*.class
