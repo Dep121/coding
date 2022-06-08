@@ -45,9 +45,9 @@ public class LCS {
   }
 
   static int tableLCS(String a, String b) {
-    // table size will be of a.length X b.length
+    // table size will be of a.length * b.length
     // initialize first row and column
-    // if any of the string is empty then nothing is come so fill with 0.
+    // if any of the string is empty then nothing will be common so fill with 0.
 
     for(int i=0; i<a.length(); ++i) {
       table[0][i] = 0;
