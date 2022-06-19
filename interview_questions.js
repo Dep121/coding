@@ -28,6 +28,12 @@
  * 
  * insertion, deletion, search all in O(1)
  * setImmediate setTimeout
+ * 
+ * how can you improve preformance of website from frontend
+ * useref() vs createRef()
+ * 
+ * login mechanism various types
+ * 
  */
 
 
