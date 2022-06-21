@@ -34,6 +34,18 @@
  * 
  * login mechanism various types
  * 
+ * 
+ * OS virtual memory concept
+LRU cache
+Publisher subscriber model
+What is the challenging task you have done
+Promise trick question merge sort also for large data on disk of 10 gb and ram of 2 gb.
+Design pattern
+
+HTTP verbs
+GET, POST, PUT, PATCH, HEAD, OPTIONS
+
+Design a data sync system.
  */
 
 
