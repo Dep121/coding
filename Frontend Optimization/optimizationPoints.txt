@@ -1,0 +1,23 @@
+Optimize LCP(Largest Contentful Paint), FID(First Input Delay), CLS(Cumulative Layout Shift)
+
+LCP
+1. Use Webp or avif for image
+    use bare minimum fonts to render the page
+2. Use a CDN
+3. Rendering Blocking JS --> delay LCP --> to avoid it use SSR using NextJS
+4. Optimize loading of resources on priority --> use "preload" tag and use fetchpriority="low" or fetchpriority="high"
+    for image tags
+5. less than 2.5ms is good and more than 4s is bad
+
+FID
+1. less than 100ms is good and more than 300ms is bad
+2. FID --> user is able to click on button and event handlers are triggering
+3. To optimize it reduce the javascript execution time --> use web workers or use lazy loading
+
+CLS
+1. use image width and height or use the CSS aspect-ratio property
+2. less than 0.1 is good and more than 0.25 is bad
+
+use web vitals chrome extension by google for a single page
+and use unlighthouse to measure all the pages of websites. it does in parallel for all the pages so it takes some minutes.
+You can use unlighthouse sdk in CI/CD pipeline also.
