@@ -4,11 +4,11 @@
 //       console.log(i);
 //   }, 0);
 // }
-for (let i = 1; i < 10; i++) {
-  setTimeout(() => {
-      console.log(i);
-  }, 0);
-}
+// for (let i = 1; i < 10; i++) {
+//   setTimeout(() => {
+//       console.log(i);
+//   }, 0);
+// }
 // for (const i = 1; i < 10; i++) {
 //   setTimeout(() => {
 //       console.log(i);
@@ -25,3 +25,12 @@ for (let i = 1; i < 10; i++) {
 // heyNew();
 
 
+// const person = {
+//   name: 'John',
+//   sayHello: function() {
+//     console.log(`Hello, ${this.name}!`);
+//   }
+// };
+// person.sayHello();
+// const greet = person.sayHello.bind(person);
+// greet(); // Output: Hello, John!

@@ -26,4 +26,4 @@ function y() {
 }
 
 y();
-console.log(this.a)
+console.log("a ==> ", this.a)
